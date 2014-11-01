@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20141101223630) do
 
   create_table "project_details", force: true do |t|
     t.string   "description"
+    t.integer  "project_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -36,12 +37,6 @@ ActiveRecord::Schema.define(version: 20141101223630) do
     t.string   "hero_content_type"
     t.integer  "hero_file_size"
     t.datetime "hero_updated_at"
-  end
-
-  create_table "thumbnails", force: true do |t|
-    t.integer "project_id"
-    t.string  "style"
-    t.binary  "file_contents"
   end
 
   create_table "users", force: true do |t|

@@ -21,6 +21,13 @@ class Admin::ProjectsController < ApplicationController
   def create
     @project = Project.new(permitted_params)
     if @project.save
+
+      if params[:images]
+        params[:images].each do |image|
+          @project.project_details
+        end
+      end
+
       redirect_to admin_project_path(@project)
     else
       redirect_to admin_project_path(@project), alert: 'Could not save this project.'
@@ -47,7 +54,7 @@ class Admin::ProjectsController < ApplicationController
     end
 
     def permitted_params
-      params.require(:project).permit(:title, :description, :thumbnail, :hero)
+      params.require(:project).permit(:title, :description, :thumbnail, :hero, :images)
     end
 
 end

@@ -1,6 +1,7 @@
 class Admin::ProjectsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_project, :only => [:show, :edit, :update]
 
   def index
     @projects = Project.all
@@ -10,6 +11,7 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
   end
 
   def edit
@@ -23,4 +25,15 @@ class Admin::ProjectsController < ApplicationController
 
   def update
   end
+
+  private
+
+    def set_project
+      @project = Project.find(params[:id])
+    end
+
+    def permitted_params
+      params.require(:project).permit(:title, :description)
+    end
+    
 end

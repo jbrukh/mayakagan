@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
 
+  has_many :project_details, :dependent => :destroy
+
   ## Thumbnail
 
   has_attached_file :thumbnail, :styles => { :thumb => "300x300>" }, :default_url => "missing.png"

@@ -27,3 +27,18 @@ gem 'devise'
 ## Media
 
 gem 'paperclip'
+
+
+## Testing
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+end
+
+# Production/Heroku
+
+group :production do
+  gem 'rails_12factor'
+  gem 'thin'
+end

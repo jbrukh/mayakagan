@@ -19,8 +19,14 @@
         <%= f.file_field :thumbnail %>
       </div>
 
+      <div class="input-group">
+        <%= f.label :hero %>
+        <%= image_tag @project.hero.url, class: 'hero' %>
+        <%= f.file_field :hero %>
+      </div>
+
       <%= f.submit class: 'btn btn-default', value: 'Save' %>
-      
+
       <% end %>
     </div>
   </div>

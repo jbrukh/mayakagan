@@ -17,6 +17,7 @@ gem 'spring',        group: :development
 ## Frontend
 
 gem 'bootstrap-sass'
+gem 'bower-rails'
 
 ## Database
 

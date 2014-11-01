@@ -28,6 +28,7 @@ gem 'devise'
 ## Media
 
 gem 'paperclip'
+gem 'aws-sdk'
 
 ## Credentials
 

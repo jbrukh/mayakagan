@@ -8,7 +8,7 @@
     <div class="col-std">     
       <% @projects.each do |project| %>
       <div class="project">
-        <h2><%= project.title %></h2>
+        <h2><%= link_to image_tag(project.thumbnail.url(300)), project_path(project) %></h2>
       </div>
       <% end %>
     </div>

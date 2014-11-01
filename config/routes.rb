@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get '/projects/:id' => 'pages#show', as: :project
+
   ## Admin
 
   devise_for :users, :skip => [:sessions]

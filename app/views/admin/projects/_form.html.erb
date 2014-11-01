@@ -25,16 +25,21 @@
         <%= f.file_field :hero %>
       </div>
 
-      <div class="control-group">
+      <div class="input-group">
         <%= f.label :pictures, :class => 'control-label' %>
-        <div class="controls">
-          <%= file_field_tag "images[]", type: :file, multiple: true %>
-       </div>
-     </div>
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
 
-     <%= f.submit class: 'btn btn-default', value: 'Save' %>
+      <% @project.project_details.each do |detail| %>
+        <div class="project-detail">
+          <p><%= detail.description %></p>
+          <%= image_tag detail.image.url, class: 'detail-image' %>
+        </div>
+      <% end %>
 
-     <% end %>
-   </div>
- </div>
+      <%= f.submit class: 'btn btn-default', value: 'Save' %>
+
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -8,7 +8,7 @@
     <div class="col-std">     
       <% @projects.each do |project| %>
       <div class="project">
-        <h2><%= link_to image_tag(project.thumbnail.url), project_path(project) %></h2>
+        <h2><%= link_to image_tag(project.thumbnail.url(:thumb)), project_path(project) %></h2>
       </div>
       <% end %>
     </div>

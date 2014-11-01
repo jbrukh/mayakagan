@@ -28,7 +28,7 @@ class Admin::ProjectsController < ApplicationController
         end
       end
 
-      redirect_to edit_admin_project_path(@project)
+      redirect_to edit_admin_project_path(@project), alert: 'Successfully created.'
     else
       redirect_to edit_admin_project_path(@project), alert: 'Could not save this project.'
     end
@@ -41,7 +41,7 @@ class Admin::ProjectsController < ApplicationController
 
   def update
     if @project.update(permitted_params)
-      redirect_to edit_admin_project_path(@project)
+      redirect_to edit_admin_project_path(@project), alert: 'Successfully updated.'
     else
       redirect_to edit_admin_project_path(@project), alert: 'Could not update this project.'
     end

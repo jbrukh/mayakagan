@@ -1,7 +1,13 @@
 <div class="container-fluid project-form">
   <div class="row">
-    <div class="col-xs-12">
-      <%= form_for [:admin, @project] do |f| %>
+    <%= form_for [:admin, @project] do |f| %>
+
+    <div class="col-md-3 col-lg-2">
+      <h4>Controls</h4>
+      <%= f.submit class: 'btn btn-default', value: 'Save' %>
+      <%= if @project.id then link_to "Preview", admin_project_path(@project), class: 'btn btn-warning', target: '_blank' end %>
+    </div>
+    <div class="col-md-9 col-lg-10">
 
       <div class="input-group">
         <%= f.label :title %>
@@ -15,31 +21,45 @@
 
       <div class="input-group">
         <%= f.label :thumbnail %>
-        <%= image_tag @project.thumbnail.url, class: 'thumbnail' %>
-        <%= f.file_field :thumbnail %>
+        <div class="row">
+          <div class="col-sm-3 col-lg-2">
+            <%= image_tag @project.thumbnail.url, class: 'thumbnail' %>
+          </div>
+          <div class="col-sm-8 col-lg-9">
+            <%= f.file_field :thumbnail %>
+          </div>
+        </div>
       </div>
 
       <div class="input-group">
         <%= f.label :hero %>
-        <%= image_tag @project.hero.url, class: 'thumbnail' %>
-        <%= f.file_field :hero %>
+        <div class="row">
+          <div class="col-sm-3 col-lg-2">
+            <%= image_tag @project.hero.url, class: 'thumbnail' %>
+          </div>
+          <div class="col-sm-8 col-lg-9">
+            <%= f.file_field :hero %>
+          </div>
+        </div>
       </div>
 
       <div class="input-group">
-        <%= f.label :pictures, :class => 'control-label' %>
-        <%= file_field_tag "images[]", type: :file, multiple: true %>
-      </div>
-
-      <% @project.project_details.each do |detail| %>
-        <div class="project-detail">
-          <p><%= detail.description %></p>
-          <%= image_tag detail.image.url, class: 'detail-image' %>
+        <%= f.label :details %>
+        <div class="row">
+          <div class="col-sm-3 col-lg-2">
+            <% @project.project_details.each do |detail| %>
+            <div class="project-detail">
+              <p><%= detail.description %></p>
+              <%= image_tag detail.image.url, class: 'thumbnail' %>
+            </div>
+            <% end %>
+          </div>
+          <div class="col-sm-8 col-lg-9">
+            <%= file_field_tag "images[]", type: :file, multiple: true %>
+          </div>
         </div>
-      <% end %>
-
-      <%= f.submit class: 'btn btn-default', value: 'Save' %>
-
-      <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>

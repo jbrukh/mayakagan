@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
   namespace :admin do
   get 'projects/index'
   end

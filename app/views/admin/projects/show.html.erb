@@ -1,8 +1,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-std">
-      <%= link_to "Edit", edit_admin_project_path(@project), class: 'btn btn-default' %>
-      <%= link_to "See projects", admin_projects_path %>
       <%= render 'project', project: @project %>
     </div>
   </div>

@@ -1,0 +1,30 @@
+.admin-nav {
+	
+	.top-bar {
+		background-color: white;
+		padding: 2em;
+		.logo {
+			height: 4em;
+		}
+		.btn {
+			float: right;
+			margin: 1em 0;
+		}
+	}
+
+	ul.menu {
+		background-color: darkgrey;
+    list-style-type: none;
+    overflow: auto;
+    padding: 1em 2em 1em 2em;
+    li {
+      float: left;
+      &:not(:last-of-type) {
+      	padding-right: 2em;
+      }
+    }
+    a {
+      color: white;
+    }
+  }
+}

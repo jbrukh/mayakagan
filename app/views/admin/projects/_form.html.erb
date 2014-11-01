@@ -1,22 +1,27 @@
-<div class="project">
-  <%= form_for [:admin, @project] do |f| %>
-  
-  <div class="input-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+<div class="container-fluid project-form">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_for [:admin, @project] do |f| %>
 
-  <div class="input-group">  
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control', rows: 5, cols: 60 %>
-  </div>
+      <div class="input-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-  <div class="input-group">
-    <%= f.label :thumbnail %>
-    <img src="<%= @project.thumbnail.url %>" class="thumbnail"/>
-    <%= f.file_field :thumbnail %>
-  </div>
+      <div class="input-group">  
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control', rows: 5, cols: 60 %>
+      </div>
 
-  <%= f.submit class: 'btn btn-default', value: 'Save' %>
-  <% end %>
+      <div class="input-group">
+        <%= f.label :thumbnail %>
+        <%= image_tag @project.thumbnail.url, class: 'thumbnail' %>
+        <%= f.file_field :thumbnail %>
+      </div>
+
+      <%= f.submit class: 'btn btn-default', value: 'Save' %>
+      
+      <% end %>
+    </div>
+  </div>
 </div>

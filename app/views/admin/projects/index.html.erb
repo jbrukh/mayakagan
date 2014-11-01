@@ -1,17 +1,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-std">
-      
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-std">
-      <h1>Projects</h1>
-      <a href="<%= new_admin_project_path %>">Create a new project</a>
       <% @projects.each do |project| %>
         <%= render 'project', project: project %>
-        <%= link_to "Edit", edit_admin_project_path(project), class: 'btn btn-default' %>
-        <%= link_to "Delete", admin_project_path(project), method: 'delete', class: 'btn btn-default' %>
       <% end %>
     </div>
   </div>

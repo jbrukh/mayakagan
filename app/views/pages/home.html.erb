@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-std">
       <nav class="top-nav">
-        <%= image_tag 'MKLogo.png', class: 'logo' %>
+        <%= link_to image_tag('MKLogo.png', class: 'logo'), '/' %>
       </nav>
     </div>
     <div class="col-std">     
       <% @projects.each do |project| %>
       <div class="project">
-        <h2><%= link_to image_tag(project.thumbnail.url(300)), project_path(project) %></h2>
+        <h2><%= link_to image_tag(project.thumbnail.url), project_path(project) %></h2>
       </div>
       <% end %>
     </div>

@@ -17,9 +17,15 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'common';
+@import 'controls';
+
 
 .col-std {
   @include make-xs-column(12);
+}
+
+.no-padding {
+  padding: 0;
 }
 
 body {

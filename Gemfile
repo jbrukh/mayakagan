@@ -21,8 +21,6 @@ gem 'bower-rails'
 
 ## Database
 
-gem 'pg'
-
 ## User Accounts
 
 gem 'devise'

@@ -28,7 +28,6 @@ gem 'devise'
 ## Media
 
 gem 'paperclip'
-gem 'paperclip_database'
 
 ## Testing
 

@@ -3,17 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .project {
-  border-bottom: 1px solid lightgrey;
-  padding: 1em;
+	border-bottom: 1px solid lightgrey;
+	padding: 1em;
 
-  .thumbnail {
-    width: 100%;
-  }
+	.thumbnail {
+		width: 100%;
+	}
 }
 
 .project-form {
-  .thumbnail {
-    max-width: 10em;
-  }
+	.thumbnail {
+		max-width: 10em;
+	}
 
+	.input-group {
+		padding: 1em 0;
+	}
 }

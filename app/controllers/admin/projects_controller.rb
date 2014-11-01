@@ -34,9 +34,9 @@ class Admin::ProjectsController < ApplicationController
 
   def update
     if @project.update(permitted_params)
-      redirect_to admin_project_path(@project)
+      redirect_to edit_admin_project_path(@project)
     else
-      redirect_to admin_project_path(@project), alert: 'Could not update this project.'
+      redirect_to edit_admin_project_path(@project), alert: 'Could not update this project.'
     end
   end
 
@@ -47,7 +47,7 @@ class Admin::ProjectsController < ApplicationController
     end
 
     def permitted_params
-      params.require(:project).permit(:title, :description, :thumbnail)
+      params.require(:project).permit(:title, :description, :thumbnail, :hero)
     end
 
 end

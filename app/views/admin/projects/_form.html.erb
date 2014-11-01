@@ -25,9 +25,16 @@
         <%= f.file_field :hero %>
       </div>
 
-      <%= f.submit class: 'btn btn-default', value: 'Save' %>
+      <div class="control-group">
+        <%= f.label :pictures, :class => 'control-label' %>
+        <div class="controls">
+          <%= file_field_tag "images[]", type: :file, multiple: true %>
+       </div>
+     </div>
 
-      <% end %>
-    </div>
-  </div>
+     <%= f.submit class: 'btn btn-default', value: 'Save' %>
+
+     <% end %>
+   </div>
+ </div>
 </div>

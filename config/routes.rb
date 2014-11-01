@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'projects/index'
+  end
+
+  namespace :admin do
+  get 'projects/show'
+  end
+
+  namespace :admin do
+  get 'projects/new'
+  end
+
+  namespace :admin do
+  get 'projects/edit'
+  end
+
+  namespace :admin do
+  get 'projects/create'
+  end
+
+  namespace :admin do
+  get 'projects/destroy'
+  end
+
+  namespace :admin do
+  get 'projects/update'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

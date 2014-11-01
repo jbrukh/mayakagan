@@ -29,6 +29,10 @@ gem 'devise'
 
 gem 'paperclip'
 
+## Credentials
+
+gem 'figaro'
+
 ## Testing
 
 group :development, :test do

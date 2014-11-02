@@ -15,5 +15,4 @@
 //= require bootstrap-sprockets
 //= require masonry.pkgd.min.js
 //= require imagesloaded.pkgd.min.js
-//= require skrollr
 //= require_tree .

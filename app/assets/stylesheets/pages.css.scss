@@ -28,16 +28,22 @@
     overflow: auto;
     margin: 0;
     li {
-      font-size: 1em;
       text-transform: uppercase;
       line-height: 4em;
       float: left;
       &:not(:last-of-type) {
         padding-right: 1em;
       }
+      .text {
+        font-size: 1.3em;
+        padding-right: 0.5em;
+      }
     }
     a {
       color: white;
+    }
+    img.social-link {
+      height: 1.5em;
     }
   }
 }

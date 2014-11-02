@@ -3,10 +3,10 @@
     <div class="col-xs-12">
       <span class="copyright">Copyright © 2013-2014</span>
       <ul class="about">
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to image_tag('fb.png'), 'http://facebook.com' %></li>
-        <li><%= link_to image_tag('insta.png'), 'http://instagram.com' %></li>
-        <li><%= link_to image_tag('pinterest.png'), 'http://instagram.com' %></li>
+        <li><%= link_to "About", about_path, class: 'text' %></li>
+        <li><%= link_to image_tag('fb.png', class: 'social-link'), 'http://facebook.com' %></li>
+        <li><%= link_to image_tag('insta.png', class: 'social-link'), 'http://instagram.com' %></li>
+        <li><%= link_to image_tag('pinterest.png', class: 'social-link'), 'http://instagram.com'%></li>
       </ul>
     </div>
   </div>

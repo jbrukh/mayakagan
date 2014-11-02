@@ -91,7 +91,8 @@ body {
 
 .about-page {
   text-align: center;
-  img.about {
+
+  img.pic {
     width: 100%;
   }
 
@@ -100,11 +101,8 @@ body {
 
       background-color: $color-bg;
       color: $color-fg;
-      text-align: center;
-
-      @media(min-width: 0) {
-        padding: 2em 4em;
-      }
+      text-align: center; 
+      padding: 2em 4em;
       
       @media(min-width: $screen-sm) {
         padding: 4em 10em;
@@ -115,7 +113,7 @@ body {
       }
     }
 
-    .title {
+    h1.title {
       @media(min-width: 0) {
         font-size: 3em;
       }
@@ -136,7 +134,7 @@ body {
       text-align: justify;
       line-height: 1.6em;
       font-weight: 300;
-    }
+   }
   }
 
 }

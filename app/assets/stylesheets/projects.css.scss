@@ -63,11 +63,11 @@
       text-align: center;
 
       @media(min-width: 0) {
-        padding: 2em 4em;
+        padding: 2em 4em 4em;
       }
       
       @media(min-width: $screen-sm) {
-        padding: 4em 10em;
+        padding: 4em 10em 7em;
       }
 
       @media(min-width: $screen-md) {

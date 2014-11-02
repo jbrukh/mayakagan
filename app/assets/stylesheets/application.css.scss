@@ -57,7 +57,7 @@ body {
     padding: 1.9em 0;
     font-size: 1.1em;
     font-family: $font-header-light;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: .07em;
   }
 }
@@ -161,15 +161,18 @@ body {
       padding: 0em $tile-padding 2*$tile-padding $tile-padding;
       img {
          width: $tile-width;
-        @media(min-width: 0px) {
-        }
-        @media(min-width: $screen-sm) {
-        }
-        @media(min-width: $screen-md) {
-        }
-        @media(min-width: $screen-lg) {
+        // @media(min-width: 0px) {
+        // }
+        // @media(min-width: $screen-sm) {
+        // }
+        // @media(min-width: $screen-md) {
+        // }
+        // @media(min-width: $screen-lg) {
          
-        }
+        // }
+      }
+      .image-link, .shadow {
+        display: block;
       }
     }
   }

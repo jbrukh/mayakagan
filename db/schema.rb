@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102192932) do
+ActiveRecord::Schema.define(version: 20141102211700) do
 
   create_table "project_details", force: true do |t|
     t.string   "description"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141102192932) do
     t.integer  "hero_file_size"
     t.datetime "hero_updated_at"
     t.integer  "position"
+    t.boolean  "shadow",                             default: false
   end
 
   create_table "users", force: true do |t|

@@ -17,8 +17,6 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'bower-rails'
 
-## Database
-
 ## User Accounts
 
 gem 'devise'
@@ -27,6 +25,10 @@ gem 'devise'
 
 gem 'paperclip'
 gem 'aws-sdk'
+
+## Ordering
+
+gem 'acts_as_list'
 
 ## Credentials
 

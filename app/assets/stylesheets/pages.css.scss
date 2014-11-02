@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'bootstrap';
+
 .top-nav {
   text-align: center;
   padding: 2em 0;
@@ -12,10 +14,22 @@
 
 #project-tiles {
   margin: 0 auto;
+  visibility: hidden;
   .project-tile {
-    padding: 1em;
+    padding: 2em;
     img {
-      width: 20vw;
+      @media(min-width: 0px) {
+        width: 20em;
+      }
+      @media(min-width: $screen-sm) {
+        width: 18em;
+      }
+      @media(min-width: $screen-md) {
+        width: 20em;
+      }
+      @media(min-width: $screen-lg) {
+        width: 22em;
+      }
     }
   }
 }

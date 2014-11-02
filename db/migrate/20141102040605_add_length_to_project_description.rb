@@ -1,7 +1,5 @@
 class AddLengthToProjectDescription < ActiveRecord::Migration
-
   def change
-    change_column :project, :description, :string, :limit => 2048
+    change_column :projects, :description, :text
   end
-
 end

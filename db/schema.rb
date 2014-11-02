@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101223630) do
+ActiveRecord::Schema.define(version: 20141102040605) do
 
   create_table "project_details", force: true do |t|
     t.string   "description"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141101223630) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "thumbnail_file_name"

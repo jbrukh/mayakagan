@@ -27,10 +27,21 @@
   padding: 0;
 }
 
+section {
+  padding: 1em 0;
+}
+
+label {
+  font-size: 18px;
+  margin: .5em 0 .3em;
+  text-transform: uppercase;
+}
+
 body {
   background-color: $color-bg;
   font-family: $font-copy;
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, label {
     font-family: $font-header;
+    text-transform: uppercase;
   }
 }

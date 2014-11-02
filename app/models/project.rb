@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
 
   has_many :project_details, -> { order("position ASC") }, :dependent => :destroy
+  scope :ordered, -> { order("position ASC") }
+  acts_as_list
 
   ## Thumbnail
 

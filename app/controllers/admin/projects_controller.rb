@@ -1,11 +1,11 @@
 class Admin::ProjectsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_project, :only => [:show, :edit, :update, :destroy]
+  before_action :set_project, :only => [:show, :edit, :update, :destroy, :move]
   layout 'admin'
 
   def index
-    @projects = Project.all
+    @projects = Project.ordered
   end
 
   def show
@@ -54,14 +54,29 @@ class Admin::ProjectsController < ApplicationController
     end
   end
 
+  def move
+    puts "MOVING!", query_params[:move]
+      if query_params[:move] == 'up'
+        puts "MOVING HIGHER"
+        @project.move_higher
+      elsif query_params[:move] == 'down'
+        puts "MOVING LOWER"
+        @project.move_lower
+      end
+      redirect_to admin_projects_path
+  end
+
   private
 
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    def permitted_params
-      params.require(:project).permit(:title, :description, :thumbnail, :hero, :images => [])
-    end
+  def permitted_params
+    params.require(:project).permit(:title, :description, :thumbnail, :hero, :images => [])
+  end
 
+  def query_params
+    params.permit(:move)
+  end
 end

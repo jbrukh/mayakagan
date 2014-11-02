@@ -23,7 +23,7 @@ class Admin::ProjectDetailsController < ApplicationController
   end
 
   def permitted_params
-    params.require(:project_details).permit(:move)
+    params.permit(:move)
   end
 
 end

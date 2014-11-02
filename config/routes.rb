@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   ## Projects
 
   resources :projects, :only => [:show]
+  get '/projects/:id/edit' => 'admin/projects#edit'
 
   ## Admin
 

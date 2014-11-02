@@ -48,17 +48,17 @@ body {
 
 .top-nav {
   text-align: center;
-  padding: 2em 0;
+  padding: 2em 0 0;
   .logo {
     height: 10em;
   }
 
   .tagline {
-    padding-top: 1em;
-    font-size: 1.5em;
-    font-weight: lighter;
-    letter-spacing: .2em;
-    font-family: $font-header;
+    padding: 1.9em 0;
+    font-size: 1.1em;
+    font-family: $font-header-light;
+    font-weight: 500;
+    letter-spacing: .07em;
   }
 }
 
@@ -152,7 +152,7 @@ body {
   visibility: hidden;
 
   .project-tile {
-    padding: 2em;
+    padding: 0em 2em 4em 2em;
     img {
       @media(min-width: 0px) {
         width: 22em;

@@ -1,11 +1,16 @@
 /* typeface */
 
 @font-face {
-  font-family: 'DIN Condensed Bold';
+  font-family: 'DIN Condensed';
   src: font-url('DINCondensedBold.ttf') format('truetype');
-  font-style: normal;
+  font-style: bold;
 }
 
+@font-face {
+  font-family: 'DIN';
+  src: font-url('DINLight.ttf') format('truetype');
+  font-style: lighter;
+}
 /* colors */
 
 $color-bg: #f7f5f5;
@@ -13,5 +18,6 @@ $color-fg: #222;
 
 /* fonts */
 
-$font-header: 'DIN Condensed Bold', 'Dosis', sans-serif;
+$font-header: 'DIN Condensed', 'Dosis', sans-serif;
+$font-header-light: 'Dosis', sans-serif;
 $font-copy: 'Helvetica Neue', 'Helvetica', Helvetica, sans-serif;

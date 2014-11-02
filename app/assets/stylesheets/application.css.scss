@@ -68,7 +68,7 @@ body {
 }
 
 .footer {
-  
+
   background-color: black;
   color: white;
   font-family: $font-header;
@@ -86,7 +86,7 @@ body {
   
     li {
       text-transform: uppercase;
-      padding: 1.4em 0 .8em;
+      padding: 1.4em 0 .7em;
       float: left;
 
       &:not(:last-of-type) {

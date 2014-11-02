@@ -12,25 +12,43 @@
 
   .project-text {
     .box {
-      padding: 4em 10em;
+
       background-color: $color-bg;
       color: $color-fg;
       text-align: center;
+
+      @media(min-width: 0) {
+        padding: 2em 4em;
+      }
       
+      @media(min-width: $screen-sm) {
+        padding: 4em 10em;
+      }
+
       @media(min-width: $screen-md) {
         margin-top: -7.5em;
       }
 
       .title {
+        @media(min-width: 0) {
+          font-size: 3em;
+        }
+        @media(min-width: $screen-sm) {
+          font-size: 5em;
+        }
         text-transform: uppercase;
-        font-size: 5em;
         font-weight: normal;
       }
 
       .description {
+        @media(min-width: 0) {
+          font-size: .9em;
+        }
+        @media(min-width: $screen-sm) {
+          font-size: 1.1em;
+        }
         text-align: justify;
         line-height: 1.6em;
-        font-size: 1.1em;
         font-weight: 300;
       }
     }

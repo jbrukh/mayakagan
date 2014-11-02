@@ -48,20 +48,27 @@
       <div class="input-group">
         <%= f.label :details %>
         <div class="row">
-          <div class="col-sm-3 col-lg-2">
+          <div class="col-sm-3 col-lg-4">
             <% @project.project_details.each do |detail| %>
-            <div class="project-detail">
-              <p><%= detail.description %></p>
-              <%= image_tag detail.image.url, class: 'thumbnail' %>
+            <div class="row">
+              <div class="col-xs-6">
+               <div class="project-detail">
+                <p><%= detail.description %></p>
+                <%= image_tag detail.image.url, class: 'thumbnail' %>
+              </div>
             </div>
-            <% end %>
-          </div>
-          <div class="col-sm-8 col-lg-9">
-            <%= file_field_tag "images[]", type: :file, multiple: true %>
-          </div>
-        </div>
+            <div class="col-xs-6">
+             <%= link_to "Delete", admin_project_detail_path(detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+           </div>
+         </div>
+         <% end %>
+       </div>
+       <div class="col-sm-8 col-lg-8">
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
       </div>
     </div>
-    <% end %>
   </div>
+</div>
+<% end %>
+</div>
 </div>

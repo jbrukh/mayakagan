@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :projects
+    resources :project_details, :only => [:destroy]
   end
 
 end

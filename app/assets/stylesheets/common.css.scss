@@ -1,2 +1,17 @@
+/* typeface */
+
+@font-face {
+  font-family: 'DIN Condensed Bold';
+  src: font-url('DINCondensedBold.ttf') format('truetype');
+  font-style: normal;
+}
+
+/* colors */
+
 $color-bg: #f7f5f5;
 $color-fg: #222;
+
+/* fonts */
+
+$font-header: 'DIN Condensed Bold', 'Dosis', sans-serif;
+$font-copy: 'Helvetica Neue', 'Helvetica', Helvetica, sans-serif;

@@ -24,7 +24,7 @@ class Admin::ProjectsController < ApplicationController
 
       if params[:images]
         params[:images].each do |image|
-          @project.project_details.create(image: image)
+          @project.project_details.create!(image: image)
         end
       end
 
@@ -41,6 +41,13 @@ class Admin::ProjectsController < ApplicationController
 
   def update
     if @project.update(permitted_params)
+
+      if params[:images]
+        params[:images].each do |image|
+          @project.project_details.create!(image: image)
+        end
+      end
+
       redirect_to edit_admin_project_path(@project), alert: 'Successfully updated.'
     else
       redirect_to edit_admin_project_path(@project), alert: 'Could not update this project.'

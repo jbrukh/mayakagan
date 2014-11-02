@@ -20,6 +20,9 @@ module MayakaganCom
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Fonts
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    
      # S3
      config.paperclip_defaults = {
         :storage => :s3,

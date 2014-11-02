@@ -15,11 +15,11 @@ class Project < ActiveRecord::Base
   validates_attachment_content_type :hero, :content_type => /\Aimage\/.*\Z/
 
   def next
-    Project.where("position > ?", position).first
+    lower_items.first
   end
 
   def prev
-    Project.where("position < ?", position).last
+    higher_items.last
   end
 
 end

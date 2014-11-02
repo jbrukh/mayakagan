@@ -1,0 +1,16 @@
+<div class="project-page">
+  <div class="row hero">
+    <%= image_tag project.hero.url %>
+  </div>
+  <div class="row project-text">
+    <div class="box col-xs-8 col-xs-offset-2">
+      <div class="title"><%= project.title %></div>
+      <div class="description"><%= project.description %></div>
+    </div>
+  </div>
+  <% project.project_details.each do |detail| %>
+    <div class="row detail">
+      <%= image_tag detail.image.url %>
+    </div>
+  <% end %>
+</div>

@@ -19,13 +19,13 @@
     padding: 2em;
     img {
       @media(min-width: 0px) {
-        width: 20em;
+        width: 22em;
       }
       @media(min-width: $screen-sm) {
         width: 18em;
       }
       @media(min-width: $screen-md) {
-        width: 20em;
+        width: 19em;
       }
       @media(min-width: $screen-lg) {
         width: 22em;

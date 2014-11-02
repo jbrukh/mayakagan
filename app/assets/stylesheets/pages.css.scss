@@ -26,7 +26,11 @@
     float: right;
     list-style-type: none;
     overflow: auto;
+    margin: 0;
     li {
+      font-size: 1em;
+      text-transform: uppercase;
+      line-height: 4em;
       float: left;
       &:not(:last-of-type) {
         padding-right: 2em;

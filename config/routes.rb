@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   ## Projects
 
-  get '/projects/:id' => 'pages#show', as: :project
+  resources :projects, :only => [:show]
 
   ## Admin
 

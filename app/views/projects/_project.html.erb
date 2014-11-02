@@ -1,6 +1,10 @@
 <div class="project-page">
   <div class="row hero">
-    <%= image_tag project.hero.url %>
+    <% if project.hero.file? %>
+      <%= image_tag project.hero.url %>
+    <% else %>
+      <%= image_tag project.thumbnail.url %>
+    <% end %>
   </div>
   <div class="row project-text">
     <div class="box col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">

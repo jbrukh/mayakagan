@@ -2,7 +2,16 @@ input.form-control {
   border-radius: 0;
   height: 5rem;
   box-shadow: none;
-  border: 0;
+  border: 1px solid lightgray;
+}
+
+textarea.form-control {
+  border: 1px solid lightgray;
+  box-shadow: none;
+}
+
+.thumbnail {
+  border-radius: 0;
 }
 
 *:focus {

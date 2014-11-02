@@ -4,19 +4,21 @@
       <%= render 'nav' %>
     </div>
     <div class="col-std">
-      <div id="project-tiles">   
-        <% @projects.each do |project| %>
-        <div class="project-tile">
-          <%= link_to image_tag(project.thumbnail.url(:thumb)), project_path(project) %>
+      <div id="project-tiles-container">
+        <div id="project-tiles">   
+          <% @projects.each do |project| %>
+          <div class="project-tile">
+            <%= link_to image_tag(project.thumbnail.url(:thumb)), project_path(project) %>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
 </div>
 <script>
   var pics = $('#project-tiles img'),
-      tiles = $('#project-tiles');
+  tiles = $('#project-tiles');
 
   imagesLoaded(pics, function() {
     new Masonry('#project-tiles', {

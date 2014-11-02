@@ -14,12 +14,12 @@
  *= require_self
  */
 
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-@import 'common';
-@import 'controls';
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+ @import 'common';
+ @import 'controls';
 
-.col-std {
+ .col-std {
   @include make-xs-column(12);
 }
 
@@ -142,29 +142,34 @@ body {
       text-align: justify;
       line-height: 1.6em;
       font-weight: 300;
-   }
+    }
   }
 
 }
 
-#project-tiles {
+#project-tiles-container {
+  $tile-padding: 1.1em;
+  $tile-width: 19.5em;
+  $container-width: 3*($tile-width + $tile-padding*2);
+  max-width: $container-width;
   margin: 0 auto;
-  visibility: hidden;
-
-  .project-tile {
-    padding: 0em 2em 4em 2em;
-    img {
-      @media(min-width: 0px) {
-        width: 22em;
-      }
-      @media(min-width: $screen-sm) {
-        width: 18em;
-      }
-      @media(min-width: $screen-md) {
-        width: 19em;
-      }
-      @media(min-width: $screen-lg) {
-        width: 22em;
+  
+  #project-tiles {  
+    margin: 0 auto;
+    visibility: hidden;
+    .project-tile {
+      padding: 0em $tile-padding 2*$tile-padding $tile-padding;
+      img {
+         width: $tile-width;
+        @media(min-width: 0px) {
+        }
+        @media(min-width: $screen-sm) {
+        }
+        @media(min-width: $screen-md) {
+        }
+        @media(min-width: $screen-lg) {
+         
+        }
       }
     }
   }

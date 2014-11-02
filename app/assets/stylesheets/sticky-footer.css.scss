@@ -1,0 +1,14 @@
+$footerHeight: 4em;
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -1*($footerHeight);
+}
+
+.footer, .push {
+  height: $footerHeight;
+}

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/projects/:id' => 'pages#show', as: :project
+  get '/about' => 'pages#about', as: :about
 
   ## Admin
 

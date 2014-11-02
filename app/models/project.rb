@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  has_many :project_details, :dependent => :destroy
+  has_many :project_details, -> { order("position ASC") }, :dependent => :destroy
 
   ## Thumbnail
 

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :projects
-    resources :project_details, :only => [:destroy]
+    resources :project_details, :only => [:destroy, :update]
   end
 
 end

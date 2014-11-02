@@ -7,10 +7,23 @@ class Admin::ProjectDetailsController < ApplicationController
     redirect_to edit_admin_project_path(id: @project_detail.project_id)
   end
 
+  def update
+    if params[:move] == 'up'
+      @project_detail.move_higher
+    elsif params[:move] == 'down'
+      @project_detail.move_lower
+    end
+    redirect_to edit_admin_project_path(id: @project_detail.project_id) + '#details'
+  end
+
   private
 
   def set_project_detail
     @project_detail = ProjectDetail.find(params[:id])
+  end
+
+  def permitted_params
+    params.require(:project_details).permit(:move)
   end
 
 end

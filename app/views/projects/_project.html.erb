@@ -5,7 +5,7 @@
     <% else %>
       <%= image_tag project.thumbnail.url %>
     <% end %>
-    <div class="home">
+    <div class="home" data-0="visibility: hidden;" data-100="visibility: visible;">
     <%= link_to image_tag('MKLogo.png'), root_path %>
     </div>
   </div>
@@ -21,3 +21,6 @@
     </div>
   <% end %>
 </div>
+<script>
+  var s = skrollr.init();
+</script>

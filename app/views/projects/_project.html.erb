@@ -28,12 +28,15 @@
     </div>
   </div>
   <div class="details">
-  <% project.project_details.each do |detail| %>
-  <div class="detail">
-    <div class="row">
-      <%= image_tag detail.image.url %>
+    <% project.project_details.each do |detail| %>
+    <div class="detail">
+      <div class="row">
+        <%= image_tag detail.image.url %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
+    <% if project.bottom_padding? %>
+      <div class="bottom-padding"></div>
+    <% end %>
   </div>
 </div>

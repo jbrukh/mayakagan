@@ -100,14 +100,18 @@
   }
 
   .details {
+    $padding: 8em;
     .detail {
       text-align: center;
       &:not(:first-child) {
-        padding-top: 4em;
+        padding-top: $padding;
       }
       img {
         max-width: 90%;
       }
+    }
+    .bottom-padding {
+      padding-top: $padding;
     }
   }
 }

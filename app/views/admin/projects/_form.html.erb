@@ -52,10 +52,14 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<section>
-						<%= file_field_tag "images[]", type: :file, multiple: true %>
+							<%= file_field_tag "images[]", type: :file, multiple: true %>
 						</section>
 					</div>
 				</div>
+
+				<section>
+					<span>Bottom padding?</span>&nbsp;<%= f.check_box :bottom_padding %>
+				</section>
 				
 				<% @project.project_details.each do |detail| %>
 				<div class="row">

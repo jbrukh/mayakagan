@@ -11,7 +11,11 @@
 }
 
 #project-tiles {
+  margin: 0 auto;
   .project-tile {
-
+    padding: 1em;
+    img {
+      width: 20vw;
+    }
   }
 }

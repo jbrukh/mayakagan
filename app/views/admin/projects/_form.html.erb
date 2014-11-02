@@ -23,7 +23,7 @@
         <%= f.label :thumbnail %>
         <div class="row">
           <div class="col-sm-3 col-lg-2">
-            <%= image_tag @project.thumbnail.url, class: 'thumbnail' %>
+            <%= image_tag @project.thumbnail.url(:thumb), class: 'thumbnail' %>
           </div>
           <div class="col-sm-8 col-lg-9">
             <%= f.file_field :thumbnail %>
@@ -35,7 +35,7 @@
         <%= f.label :hero %>
         <div class="row">
           <div class="col-sm-3 col-lg-2">
-            <%= image_tag @project.hero.url, class: 'thumbnail' %>
+            <%= image_tag @project.hero.url(:thumb), class: 'thumbnail' %>
           </div>
           <div class="col-sm-8 col-lg-9">
             <%= f.file_field :hero %>

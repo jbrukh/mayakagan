@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   ## Hero
 
-  has_attached_file :hero, :default_url => "missing.png"
+  has_attached_file :hero, :styles => { :thumb => "300x300>" }, :default_url => "missing.png"
   validates_attachment_content_type :hero, :content_type => /\Aimage\/.*\Z/
 
 end

@@ -52,6 +52,14 @@ body {
   .logo {
     height: 10em;
   }
+
+  .tagline {
+    padding-top: 1em;
+    font-size: 1.5em;
+    font-weight: lighter;
+    letter-spacing: .2em;
+    font-family: $font-header;
+  }
 }
 
 .footer {
@@ -142,6 +150,7 @@ body {
 #project-tiles {
   margin: 0 auto;
   visibility: hidden;
+
   .project-tile {
     padding: 2em;
     img {

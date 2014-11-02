@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-std">
-      <%= render 'projects/project', project: @project %>
+      <%= render 'projects/project', project: @project, next_project: @project.next, prev_project: @project.prev %>
     </div>
   </div>
 </div>

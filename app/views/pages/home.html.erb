@@ -6,7 +6,7 @@
       </nav>
     </div>
     <div class="col-std">
-      <div class="project-tiles">   
+    <div id="project-tiles">   
         <% @projects.each do |project| %>
         <div class="project-tile">
           <h2><%= link_to image_tag(project.thumbnail.url(:thumb)), project_path(project) %></h2>
@@ -16,3 +16,10 @@
     </div>
   </div>
 </div>
+<script>
+  new Masonry( '#project-tiles', {
+    itemSelector: '.project-tile',
+    isOriginLeft: true,
+    isFitWidth: true
+  });
+</script>

@@ -38,17 +38,22 @@ label {
 }
 
 body {
+
   background-color: $color-bg;
   font-family: $font-copy;
+  
   h1, h2, h3, h4, h5, h6, label {
     font-family: $font-header;
     text-transform: uppercase;
   }
+
 }
 
 .top-nav {
+
   text-align: center;
   padding: 2em 0 0;
+
   .logo {
     height: 10em;
   }
@@ -63,9 +68,11 @@ body {
 }
 
 .footer {
+  
   background-color: black;
   color: white;
   font-family: $font-header;
+
   .copyright {
     text-transform: uppercase;
     line-height: 4em;
@@ -76,21 +83,31 @@ body {
     list-style-type: none;
     overflow: auto;
     margin: 0;
+  
     li {
       text-transform: uppercase;
-      line-height: 3.9em;
+      padding: 1.4em 0 .8em;
       float: left;
+
       &:not(:last-of-type) {
         padding-right: 1em;
       }
+
       .text {
         font-size: 1.3em;
         padding-right: 0.5em;
       }
+
+      img {
+        margin-top: -.08em;
+      }
     }
+
     a {
       color: white;
+      text-decoration: none;
     }
+    
     img.social-link {
       height: 1.5em;
     }
@@ -105,6 +122,7 @@ body {
   }
 
   .about-text {
+    
     .box {
 
       background-color: $color-bg;
@@ -122,45 +140,60 @@ body {
     }
 
     h1.title {
+      
+      text-transform: uppercase;
+      font-weight: normal;
+
       @media(min-width: 0) {
         font-size: 3em;
       }
+
       @media(min-width: $screen-sm) {
         font-size: 5em;
       }
-      text-transform: uppercase;
-      font-weight: normal;
+      
     }
 
     .description {
-      @media(min-width: 0) {
-        font-size: .9em;
-      }
-      @media(min-width: $screen-sm) {
-        font-size: 1.1em;
-      }
+
       text-align: justify;
       line-height: 1.6em;
       font-weight: 300;
+
+      @media(min-width: 0) {
+        font-size: .9em;
+      }
+      
+      @media(min-width: $screen-sm) {
+        font-size: 1.1em;
+      }
+
     }
   }
 
 }
 
 #project-tiles-container {
+
   $tile-padding: 1.1em;
   $tile-width: 19.5em;
   $container-width: 3*($tile-width + $tile-padding*2);
+  
   max-width: $container-width;
   margin: 0 auto;
   
   #project-tiles {  
+  
     margin: 0 auto;
     visibility: hidden;
+  
     .project-tile {
+  
       padding: 0em $tile-padding 2*$tile-padding $tile-padding;
+  
       img {
-         width: $tile-width;
+  
+       width: $tile-width;
         // @media(min-width: 0px) {
         // }
         // @media(min-width: $screen-sm) {
@@ -168,9 +201,10 @@ body {
         // @media(min-width: $screen-md) {
         // }
         // @media(min-width: $screen-lg) {
-         
+
         // }
       }
+
       .image-link, .shadow {
         display: block;
       }
@@ -179,7 +213,9 @@ body {
 }
 
 .login-page {
+
   input {
     width: 100%;
   }
+
 }

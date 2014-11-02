@@ -99,11 +99,15 @@
     }
   }
 
-  .detail {
-    text-align: center;
-    img {
-      max-width: 90%;
+  .details {
+    .detail {
+      text-align: center;
+      &:not(:first-child) {
+        padding-top: 4em;
+      }
+      img {
+        max-width: 90%;
+      }
     }
-
   }
 }

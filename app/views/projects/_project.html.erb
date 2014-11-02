@@ -1,35 +1,39 @@
 <div class="project-page">
   <div class="row hero">
-  <div class="arrows">
-    <% if prev_project %>
-    <div class="left">
-      <%= link_to image_tag('arrow-left.png'), project_path(prev_project) %>
+    <div class="arrows">
+      <% if prev_project %>
+      <div class="left">
+        <%= link_to image_tag('arrow-left.png'), project_path(prev_project) %>
+      </div>
+      <% end %>
+      <% if next_project %>
+      <div class="right">
+        <%= link_to image_tag('arrow-right.png'), project_path(next_project) %>
+      </div>
+      <% end %>
     </div>
+    <% if project.hero.file? %>
+    <%= image_tag project.hero.url %>
+    <% else %>
+    <%= image_tag project.thumbnail.url %>
     <% end %>
-    <% if next_project %>
-    <div class="right">
-      <%= link_to image_tag('arrow-right.png'), project_path(next_project) %>
+    <div class="home hidden-xs">
+      <%= link_to image_tag('MKLogo.png'), root_path %>
     </div>
-    <% end %>
   </div>
-  <% if project.hero.file? %>
-  <%= image_tag project.hero.url %>
-  <% else %>
-  <%= image_tag project.thumbnail.url %>
+  <div class="row project-text">
+    <div class="box col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+      <h1 class="title"><%= project.title %></h1>
+      <div class="description"><%= project.description %></div>
+    </div>
+  </div>
+  <div class="details">
+  <% project.project_details.each do |detail| %>
+  <div class="detail">
+    <div class="row">
+      <%= image_tag detail.image.url %>
+    </div>
+  </div>
   <% end %>
-  <div class="home hidden-xs">
-    <%= link_to image_tag('MKLogo.png'), root_path %>
   </div>
-</div>
-<div class="row project-text">
-  <div class="box col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-    <h1 class="title"><%= project.title %></h1>
-    <div class="description"><%= project.description %></div>
-  </div>
-</div>
-<% project.project_details.each do |detail| %>
-<div class="row detail">
-  <%= image_tag detail.image.url %>
-</div>
-<% end %>
 </div>

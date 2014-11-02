@@ -1,6 +1,6 @@
 <div class="project-page">
   <div class="row hero">
-  <div class="arrows hidden-xs">
+  <div class="arrows">
     <% if prev_project %>
     <div class="left">
       <%= link_to image_tag('arrow-left.png'), project_path(prev_project) %>
@@ -17,7 +17,7 @@
   <% else %>
   <%= image_tag project.thumbnail.url %>
   <% end %>
-  <div class="home" data-0="visibility: hidden;" data-250="visibility: visible;">
+  <div class="home" data-0="visibility: hidden;" data-150="visibility: visible;">
     <%= link_to image_tag('MKLogo.png'), root_path %>
   </div>
 </div>

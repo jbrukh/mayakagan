@@ -5,12 +5,13 @@
 
 
   .hero {
-    
+
     img {
       width: 100%;
     }
 
     .home {
+
       position: fixed;
       margin: 1em;
       background-color: white;
@@ -18,17 +19,31 @@
       z-index: 100;
       top: 1em;
       left: 1em;
-      padding: 1em;
+      padding: 1.7em 1.2em;
       visibility: hidden;
+
       img {
         width: 5em;
       }
     }
 
     .arrows {
-      position: absolute;
-      top: 20em;
+
+      position: fixed;
       width: 100%;
+      z-index: 100;
+
+      top: 18vw; /* 20em; */
+      
+      @media(min-width: $screen-sm) {
+        top: 19vw; /* 20em; */
+      }
+
+      @media(min-width: $screen-md) {
+        top: 20vw; /* 20em; */
+      }
+
+
       img {
         width: 1.5em;
       }

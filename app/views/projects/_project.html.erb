@@ -40,6 +40,7 @@
     <% end %>
   </div>
 </div>
+<% if next_project && prev_project %>
 <script>
   $(document).keydown(function(e) {
     switch(e.which) {
@@ -56,3 +57,4 @@
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 </script>
+<% end %>

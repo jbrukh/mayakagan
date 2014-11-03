@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
 gem 'spring',        group: :development
 
 
@@ -32,7 +33,7 @@ gem 'acts_as_list'
 
 ## Friendly URLs
 
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id', '~> 5.0.0'r
 
 ## Credentials
 

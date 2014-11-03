@@ -20,202 +20,144 @@
  @import 'controls';
 
  .col-std {
-  @include make-xs-column(12);
-}
+ 	@include make-xs-column(12);
+ }
 
-.no-padding {
-  padding: 0;
-}
+ .no-padding {
+ 	padding: 0;
+ }
 
-section {
-  padding: 1em 0;
-}
+ section {
+ 	padding: 1em 0;
+ }
 
-label {
-  font-size: 18px;
-  margin: .5em 0 .3em;
-  text-transform: uppercase;
-}
+ label {
+ 	font-size: 18px;
+ 	margin: .5em 0 .3em;
+ 	text-transform: uppercase;
+ }
 
-body {
+ body {
 
-  background-color: $color-bg;
-  font-family: $font-copy;
-  
-  h1, h2, h3, h4, h5, h6, label {
-    font-family: $font-header;
-    text-transform: uppercase;
-  }
+ 	background-color: $color-bg;
+ 	font-family: $font-copy;
 
-}
+ 	h1, h2, h3, h4, h5, h6, label {
+ 		font-family: $font-header;
+ 		text-transform: uppercase;
+ 	}
 
-.top-nav {
+ }
 
-  text-align: center;
-  padding: 2em 0 0;
+ .top-nav {
 
-  .logo {
-    height: 10em;
-  }
+ 	text-align: center;
+ 	padding: 2em 0 0;
 
-  .tagline {
-    padding: 1.9em 0;
-    font-size: 1.1em;
-    font-family: $font-header-light;
-    font-weight: 600;
-    letter-spacing: .07em;
-  }
-}
+ 	.logo {
+ 		height: 10em;
+ 	}
 
-.footer {
+ 	.tagline {
+ 		padding: 1.9em 0;
+ 		font-size: 1.1em;
+ 		font-family: $font-header-light;
+ 		font-weight: 600;
+ 		letter-spacing: .07em;
+ 	}
+ }
 
-  background-color: black;
-  color: white;
-  font-family: $font-header;
+ .footer {
 
-  .copyright {
-    text-transform: uppercase;
-    line-height: 4em;
-  }
+ 	background-color: black;
+ 	color: white;
+ 	font-family: $font-header;
 
-  ul.about {
-    float: right;
-    list-style-type: none;
-    overflow: auto;
-    margin: 0;
-  
-    li {
-      text-transform: uppercase;
-      padding: 1.4em 0 0;
-      float: left;
+ 	.copyright {
+ 		text-transform: uppercase;
+ 		line-height: 4em;
+ 	}
 
-      &:not(:last-of-type) {
-        padding-right: 1em;
-      }
+ 	ul.about {
+ 		float: right;
+ 		list-style-type: none;
+ 		overflow: auto;
+ 		margin: 0;
+ 		
+ 		li {
+ 			text-transform: uppercase;
+ 			padding: 1.4em 0 0;
+ 			float: left;
 
-      .text {
-        font-size: 1.3em;
-        padding-right: 0.5em;
-      }
+ 			&:not(:last-of-type) {
+ 				padding-right: 1em;
+ 			}
 
-      img {
-        margin-top: -.08em;
-      }
-    }
+ 			.text {
+ 				font-size: 1.3em;
+ 				padding-right: 0.5em;
+ 			}
 
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    
-    img.social-link {
-      height: 1.5em;
-    }
-  }
-}
+ 			img {
+ 				margin-top: -.08em;
+ 			}
+ 		}
 
-.about-page {
-  text-align: center;
+ 		a {
+ 			color: white;
+ 			text-decoration: none;
+ 		}
 
-  img.pic {
-    width: 100%;
-  }
+ 		img.social-link {
+ 			height: 1.5em;
+ 		}
+ 	}
+ }
 
-  .about-text {
-    
-    .box {
+ .about-page {
+ 	text-align: center;
 
-      background-color: $color-bg;
-      color: $color-fg;
-      text-align: center; 
-      padding: 2em 4em;
-      
-      @media(min-width: $screen-sm) {
-        padding: 4em 10em;
-      }
+ 	img.pic {
+ 		width: 100%;
+ 		padding-bottom: 4em;
+ 	}
 
-      @media(min-width: $screen-md) {
-        margin-top: -20.5em;
-      }
-    }
+ }
 
-    h1.title {
-      
-      text-transform: uppercase;
-      font-weight: normal;
+ #project-tiles-container {
 
-      @media(min-width: 0) {
-        font-size: 3em;
-      }
+ 	$tile-padding: 1.1em;
+ 	$tile-width: 19.5em;
+ 	$container-width: 3*($tile-width + $tile-padding*2);
 
-      @media(min-width: $screen-sm) {
-        font-size: 5em;
-      }
-      
-    }
+ 	max-width: $container-width;
+ 	margin: 0 auto;
 
-    .description {
+ 	#project-tiles {  
 
-      text-align: justify;
-      line-height: 1.6em;
-      font-weight: 300;
+ 		margin: 0 auto;
+ 		visibility: hidden;
 
-      @media(min-width: 0) {
-        font-size: .9em;
-      }
-      
-      @media(min-width: $screen-sm) {
-        font-size: 1.1em;
-      }
+ 		.project-tile {
 
-    }
-  }
+ 			padding: 0em $tile-padding 2*$tile-padding $tile-padding;
 
-}
+ 			img {
+ 				width: $tile-width;
+ 			}
 
-#project-tiles-container {
+ 			.image-link, .shadow {
+ 				display: block;
+ 			}
+ 		
+ 		}
+ 	}
+ }
 
-  $tile-padding: 1.1em;
-  $tile-width: 19.5em;
-  $container-width: 3*($tile-width + $tile-padding*2);
-  
-  max-width: $container-width;
-  margin: 0 auto;
-  
-  #project-tiles {  
-  
-    margin: 0 auto;
-    visibility: hidden;
-  
-    .project-tile {
-  
-      padding: 0em $tile-padding 2*$tile-padding $tile-padding;
-  
-      img {
-  
-       width: $tile-width;
-        // @media(min-width: 0px) {
-        // }
-        // @media(min-width: $screen-sm) {
-        // }
-        // @media(min-width: $screen-md) {
-        // }
-        // @media(min-width: $screen-lg) {
+ .login-page {
 
-        // }
-      }
+ 	input {
+ 		width: 100%;
+ 	}
 
-      .image-link, .shadow {
-        display: block;
-      }
-    }
-  }
-}
-
-.login-page {
-
-  input {
-    width: 100%;
-  }
-
-}
+ }

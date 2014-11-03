@@ -1,14 +1,11 @@
 class Admin::ProjectsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_project, :only => [:show, :edit, :update, :destroy, :move]
+  before_action :set_project, :only => [:edit, :update, :destroy, :move]
   layout 'admin'
 
   def index
     @projects = Project.ordered
-  end
-
-  def show
   end
 
   def new

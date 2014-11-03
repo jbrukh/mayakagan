@@ -4,114 +4,129 @@
 .project-page {
 
 
-  .hero {
+	.hero {
 
-    img {
-      width: 100%;
-    }
+		img {
+			width: 100%;
+		}
 
-    .home {
+		.home {
 
-      position: fixed;
-      margin: 1em;
-      background-color: white;
-      opacity: .9;
-      z-index: 100;
-      top: 1em;
-      left: 1em;
-      padding: 1.7em 1.2em;
+			position: fixed;
+			margin: 1em;
+			background-color: white;
+			opacity: .9;
+			z-index: 100;
+			top: 1em;
+			left: 1em;
+			padding: 1.7em 1.2em;
 
-      img {
-        width: 5em;
-      }
-    }
+			img {
+				width: 5em;
+			}
+		}
 
-    .arrows {
+		.arrows {
 
-      position: fixed;
-      width: 100%;
-      z-index: 100;
+			position: fixed;
+			width: 100%;
+			z-index: 100;
 
-      top: 18vw; /* 20em; */
-      
-      @media(min-width: $screen-sm) {
-        top: 19vw; /* 20em; */
-      }
+			top: 18vw; /* 20em; */
+			
+			@media(min-width: $screen-sm) {
+				top: 19vw; /* 20em; */
+			}
 
-      @media(min-width: $screen-md) {
-        top: 20vw; /* 20em; */
-      }
+			@media(min-width: $screen-md) {
+				top: 20vw; /* 20em; */
+			}
 
 
-      img {
-        width: 1.5em;
-      }
-      .left {
-        float: left;
-      }
-      .right {
-        float: right;
-      }
-    }
-  }
+			img {
+				width: 1.5em;
+			}
+			.left {
+				float: left;
+			}
+			.right {
+				float: right;
+			}
+		}
+	}
 
-  .project-text {
-    .box {
+	.project-text {
+		.box {
 
-      background-color: $color-bg;
-      color: $color-fg;
-      text-align: center;
+			background-color: $color-bg;
+			color: $color-fg;
+			text-align: center;
 
-      @media(min-width: 0) {
-        padding: 2em 4em 4em;
-      }
-      
-      @media(min-width: $screen-sm) {
-        padding: 4em 10em 7em;
-      }
+			@media(min-width: 0) {
+				padding: 2em 4em 4em;
+			}
+			
+			@media(min-width: $screen-sm) {
+				padding: 4em 10em 7em;
+			}
 
-      @media(min-width: $screen-md) {
-        margin-top: -7.5em;
-      }
+			@media(min-width: $screen-md) {
+				margin-top: -7.5em;
+			}
 
-      .title {
-        @media(min-width: 0) {
-          font-size: 3em;
-        }
-        @media(min-width: $screen-sm) {
-          font-size: 5em;
-        }
-        text-transform: uppercase;
-        font-weight: normal;
-      }
+			.title {
+				@media(min-width: 0) {
+					font-size: 3em;
+				}
+				@media(min-width: $screen-sm) {
+					font-size: 5em;
+				}
+				text-transform: uppercase;
+				font-weight: normal;
+			}
 
-      .description {
-        @media(min-width: 0) {
-          font-size: .9em;
-        }
-        @media(min-width: $screen-sm) {
-          font-size: 1.1em;
-        }
-        text-align: justify;
-        line-height: 1.6em;
-        font-weight: 300;
-      }
-    }
-  }
+			.description {
+				@media(min-width: 0) {
+					font-size: .9em;
+				}
+				@media(min-width: $screen-sm) {
+					font-size: 1.1em;
+				}
+				text-align: justify;
+				line-height: 1.6em;
+				font-weight: 300;
+			}
+		}
+	}
 
-  .details {
-    $padding: 8em;
-    .detail {
-      text-align: center;
-      &:not(:first-child) {
-        padding-top: $padding;
-      }
-      img {
-        max-width: 90%;
-      }
-    }
-    .bottom-padding {
-      padding-top: $padding;
-    }
-  }
+	.details {
+		$padding-large: 8em;
+		$padding-medium: 5em;
+		$padding-small: 3em;
+
+		@mixin padding {
+			@media(min-width: 0) {
+				padding-top: $padding-small;
+			}
+			@media(min-width: $screen-sm) {
+				padding-top: $padding-medium;
+			}
+			@media(min-width: $screen-md) {
+				padding-top: $padding-large;
+			}
+		}
+
+		.detail {
+			text-align: center;
+			&:not(:first-child) {
+				@include padding;
+			}
+			img {
+				max-width: 90%;
+			}
+		}
+		.bottom-padding {
+			@include padding;
+		}
+	}
 }

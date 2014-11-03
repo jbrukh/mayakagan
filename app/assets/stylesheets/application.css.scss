@@ -79,6 +79,7 @@
  	}
 
  	ul.about {
+
  		float: right;
  		list-style-type: none;
  		overflow: auto;
@@ -118,10 +119,20 @@
  	text-align: center;
 
  	img.pic {
- 		width: 70%;
+ 		width: 65%;
  		padding: 4em 0;
  	}
 
+ 	.home {
+			position: absolute;
+			margin: 1em;
+			top: 1em;
+			left: 1em;
+			padding: 1.7em 1.2em;
+			img {
+				width: 5em;
+			}
+		}
  }
 
  #project-tiles-container {

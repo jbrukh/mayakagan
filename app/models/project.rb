@@ -4,6 +4,10 @@ class Project < ActiveRecord::Base
   scope :ordered, -> { order("position ASC") }
   acts_as_list
 
+  ## Slugs
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   ## Thumbnail
 
   has_attached_file :thumbnail, :styles => { :thumb => "600x600>" }, :default_url => "missing.png"

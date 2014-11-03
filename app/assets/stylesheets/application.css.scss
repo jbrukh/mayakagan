@@ -126,13 +126,18 @@
  	.home {
 			position: absolute;
 			margin: 1em;
+			background-color: black;
+			opacity: .9;
+			z-index: 100;
 			top: 1em;
 			left: 1em;
 			padding: 1.7em 1.2em;
+
 			img {
 				width: 5em;
 			}
 		}
+
  }
 
  #project-tiles-container {

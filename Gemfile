@@ -30,6 +30,10 @@ gem 'aws-sdk'
 
 gem 'acts_as_list'
 
+## Friendly URLs
+
+gem 'friendly_id', '~> 5.0.0'
+
 ## Credentials
 
 gem 'figaro'

@@ -36,7 +36,23 @@
     </div>
     <% end %>
     <% if project.bottom_padding? %>
-      <div class="bottom-padding"></div>
+    <div class="bottom-padding"></div>
     <% end %>
   </div>
 </div>
+<script>
+  $(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+          window.location = '<%= project_path(prev_project) %>';
+        break;
+
+        case 39: // right
+          window.location = '<%= project_path(next_project) %>';
+        break;
+
+        default: return; // exit this handler for other keys
+      }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
+</script>

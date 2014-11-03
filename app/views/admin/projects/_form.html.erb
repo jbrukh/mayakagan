@@ -25,7 +25,7 @@
 				<%= f.label :thumbnail %>
 				<div class="row">
 					<div class="col-sm-3 col-lg-2">
-						<%= image_tag @project.thumbnail.url(:thumb), class: 'thumbnail' %>
+						<%= link_to image_tag(@project.thumbnail.url(:thumb), class: 'thumbnail'), @project.thumbnail.url %>
 					</div>
 					<div class="col-sm-8 col-lg-9">
 						<%= f.file_field :thumbnail %>
@@ -38,7 +38,7 @@
 				<%= f.label :hero %>
 				<div class="row">
 					<div class="col-sm-3 col-lg-2">
-						<%= image_tag @project.hero.url(:thumb), class: 'thumbnail' %>
+						<%= link_to image_tag(@project.hero.url(:thumb), class: 'thumbnail'), @project.hero.url %>
 					</div>
 					<div class="col-sm-8 col-lg-9">
 						<%= f.file_field :hero %>
@@ -60,22 +60,23 @@
 				<section>
 					<span>Bottom padding?</span>&nbsp;<%= f.check_box :bottom_padding %>
 				</section>
-
-				<% @project.project_details.each do |detail| %>
-				<div class="row">
-					<div class="col-xs-5">
-						<div class="project-detail">
-							<%= image_tag detail.image.url, class: 'thumbnail' %>
-							<p><%= detail.description %></p>
+				<section>
+					<% @project.project_details.each do |detail| %>
+					<div class="row">
+						<div class="col-xs-5">
+							<div class="project-detail">
+								<%= link_to image_tag(detail.image.url(:thumb), class: 'thumbnail'), detail.image.url %>
+								<p><%= detail.description %></p>
+							</div>
+						</div>
+						<div class="col-xs-7">
+							<%= link_to "Delete", admin_project_detail_path(detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+							<%= link_to "Up", admin_project_detail_path(detail, move: 'up'), method: 'put', class: 'btn btn-default' %>
+							<%= link_to "Down", admin_project_detail_path(detail, move: 'down'), method: 'put', class: 'btn btn-default' %>
 						</div>
 					</div>
-					<div class="col-xs-7">
-						<%= link_to "Delete", admin_project_detail_path(detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-						<%= link_to "Up", admin_project_detail_path(detail, move: 'up'), method: 'put', class: 'btn btn-default' %>
-						<%= link_to "Down", admin_project_detail_path(detail, move: 'down'), method: 'put', class: 'btn btn-default' %>
-					</div>
-				</div>
-				<% end %>
+					<% end %>
+				</section>
 			</div>
 		</div>
 		<% end %>

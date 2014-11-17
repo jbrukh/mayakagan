@@ -124,6 +124,18 @@
 			img {
 				max-width: 90%;
 			}
+
+			.description {
+				@media(min-width: 0) {
+					font-size: .9em;
+				}
+				@media(min-width: $screen-sm) {
+					font-size: 1.1em;
+				}
+				text-align: justify;
+				line-height: 1.6em;
+				font-weight: 300;
+			}
 		}
 		.bottom-padding {
 			@include padding;

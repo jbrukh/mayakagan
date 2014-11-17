@@ -31,7 +31,14 @@
     <% project.project_details.each do |detail| %>
     <div class="detail">
       <div class="row">
-        <%= image_tag detail.image.url %>
+        <div class="col-xs-12">
+          <%= image_tag detail.image.url %>
+        </div>
+        <% if detail.description %>
+          <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+            <p class="description"><%= detail.description %></p>
+          </div>
+        <% end %>
       </div>
     </div>
     <% end %>

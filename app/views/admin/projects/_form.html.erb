@@ -66,16 +66,17 @@
 				<section>
 					<span>Bottom padding?</span>&nbsp;<%= f.check_box :bottom_padding %>
 				</section>
-				<section>
-					<% @project.project_details.each do |detail| %>
+				<section class="container-fluid">
+					<%= f.fields_for :project_details do |d| %>
+					<% detail = d.object %>
 					<div class="row">
-						<div class="col-xs-5">
+						<div class="col-sm-7">
 							<div class="project-detail">
 								<%= link_to image_tag(detail.image.url(:thumb), class: 'thumbnail'), detail.image.url %>
-								<p><%= detail.description %></p>
+								<%= d.text_area :description, class: 'form-control', rows: 5, cols: 20  %>
 							</div>
 						</div>
-						<div class="col-xs-7">
+						<div class="col-sm-5">
 							<%= link_to "Delete", admin_project_detail_path(detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
 							<%= link_to "Up", admin_project_detail_path(detail, move: 'up'), method: 'put', class: 'btn btn-default' %>
 							<%= link_to "Down", admin_project_detail_path(detail, move: 'down'), method: 'put', class: 'btn btn-default' %>

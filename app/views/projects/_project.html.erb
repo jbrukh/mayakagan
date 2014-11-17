@@ -34,7 +34,7 @@
         <div class="col-xs-12">
           <%= image_tag detail.image.url %>
         </div>
-        <% if detail.description %>
+        <% if detail.description.present? %>
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="description">
               <%= detail.description %>

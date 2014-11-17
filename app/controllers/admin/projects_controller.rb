@@ -37,7 +37,8 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(permitted_params)
+    
+    if @project.update(permitted_params.merge! slug: nil)
 
       if params[:images]
         params[:images].each do |image|
@@ -52,12 +53,9 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def move
-    puts "MOVING!", query_params[:move]
       if query_params[:move] == 'up'
-        puts "MOVING HIGHER"
         @project.move_higher
       elsif query_params[:move] == 'down'
-        puts "MOVING LOWER"
         @project.move_lower
       end
       redirect_to admin_projects_path

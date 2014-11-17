@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103020612) do
+ActiveRecord::Schema.define(version: 20141117014914) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20141103020612) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "project_details", force: true do |t|
-    t.string   "description"
-    t.integer  "project_id",         null: false
+    t.text     "description",        limit: 255
+    t.integer  "project_id",                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

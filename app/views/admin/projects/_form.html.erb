@@ -8,6 +8,12 @@
 				<%= f.submit class: 'btn btn-default', value: 'Save' %>
 				<%= if @project.id then link_to "Preview", project_path(@project), class: 'btn btn-warning', target: '_blank' end %>
 			</section>
+
+			<section>
+			<h4>Published?</h4>
+			<%= f.check_box :published %>
+			</section>
+
 			<% if @project.id %>
 			<section>
 				<h4>Delete?</h4>

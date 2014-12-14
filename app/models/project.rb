@@ -28,8 +28,4 @@ class Project < ActiveRecord::Base
     higher_items.last
   end
 
-  def published
-    return ordered.where(:published => true)
-  end
-
 end

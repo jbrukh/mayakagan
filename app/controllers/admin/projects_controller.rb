@@ -68,7 +68,17 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def permitted_params
-    params.require(:project).permit(:title, :description, :thumbnail, :hero, :shadow, :bottom_padding, :project_details_attributes => [:description, :id], :images => [])
+    params.require(:project).permit(
+      :title, 
+      :description, 
+      :thumbnail, 
+      :hero, 
+      :shadow, 
+      :bottom_padding,
+      :published, 
+      :project_details_attributes => [:description, :id], 
+      :images => []
+    )
   end
 
   def query_params

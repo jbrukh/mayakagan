@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214223156) do
+ActiveRecord::Schema.define(version: 20141216044516) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141214223156) do
 
   create_table "project_details", force: true do |t|
     t.text     "description",        limit: 255
-    t.integer  "project_id",                     null: false
+    t.integer  "project_id",                                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141214223156) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
+    t.string   "type",                           default: "image"
   end
 
   create_table "projects", force: true do |t|

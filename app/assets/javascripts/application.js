@@ -15,4 +15,7 @@
 //= require bootstrap-sprockets
 //= require masonry.pkgd.min.js
 //= require imagesloaded.pkgd.min.js
+//= require BookBlock/js/modernizr.custom.js
+//= require BookBlock/js/jquerypp.custom.js
+//= require BookBlock/js/jquery.bookblock.js
 //= require_tree .

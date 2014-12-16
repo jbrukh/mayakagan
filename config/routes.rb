@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root 'application#home'
   get '/about' => 'application#about', as: :about
-
+  get '/album' => 'application#album', as: :album
+ 
   ## Projects
 
   resources :projects, :only => [:show]
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
   namespace :admin do
     put 'projects/:id/move', to: 'projects#move', as: :move_project
     resources :projects, :except => [:show]
-    resources :project_details, :only => [:destroy, :update]
+    resources :project_details, :only => [:index, :show, :destroy, :update]
   end
 
 end

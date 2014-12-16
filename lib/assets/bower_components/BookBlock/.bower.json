@@ -1,0 +1,13 @@
+{
+  "name": "BookBlock",
+  "homepage": "https://github.com/codrops/BookBlock",
+  "_release": "ec1cb343be",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ec1cb343be71431f47e1c74b564eb986f8425866"
+  },
+  "_source": "git://github.com/codrops/BookBlock.git",
+  "_target": "*",
+  "_originalSource": "BookBlock"
+}

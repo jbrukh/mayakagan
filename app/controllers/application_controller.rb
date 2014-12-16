@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
   def about
   end
 
+  def album
+  end
+
 end

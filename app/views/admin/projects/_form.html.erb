@@ -68,9 +68,12 @@
 						<section>
 							<%= file_field_tag "images[]", type: :file, multiple: true %>
 						</section>
+						<section>
+							<%= link_to "Add Flipbook", admin_project_project_details_path(@project), method: 'post', class: 'btn btn-warning' %>
+						</section>
 					</div>
 				</div>
-				
+
 
 				<section>
 					<span>Bottom padding?</span>&nbsp;<%= f.check_box :bottom_padding %>
@@ -81,8 +84,13 @@
 					<div class="row">
 						<div class="col-sm-7">
 							<div class="project-detail">
+							<% if detail.detail_type == 'image' %>
 								<%= link_to image_tag(detail.image.url(:thumb), class: 'thumbnail'), detail.image.url %>
 								<%= d.text_area :description, class: 'form-control', rows: 5, cols: 20  %>
+							<% elsif detail.detail_type == 'flipbook' %>
+								<h1>Flipbook</h1>
+								<%= link_to "Edit this flipbook", edit_admin_project_detail_path(detail) %>
+							<% end %>
 							</div>
 						</div>
 						<div class="col-sm-5">

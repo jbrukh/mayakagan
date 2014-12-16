@@ -1,10 +1,18 @@
 class Admin::ProjectDetailsController < ApplicationController
 
-  before_action :set_project_detail, except: [:index]
+  before_action :set_project_detail, except: [:create]
+  layout 'admin'
 
-  def index
+  def create
     @project = Project.friendly.find(params[:project_id])
-    @project_details = @project.project_details
+    if @project.project_details.create(detail_type: 'flipbook')
+      redirect_to edit_admin_project_path(@project), alert: "Added flipbook!"
+    else
+      redirect_to edit_admin_project_path(@project), alert: "Failed to add flipbook."
+    end
+  end
+
+  def edit
   end
 
   def destroy
@@ -28,7 +36,7 @@ class Admin::ProjectDetailsController < ApplicationController
   end
 
   def permitted_params
-    params.permit(:move)
+    params.permit(:move, :images => [])
   end
 
 end

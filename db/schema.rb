@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141216044516) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
-    t.string   "type",                           default: "image"
+    t.string   "detail_type",                    default: "image"
   end
 
   create_table "projects", force: true do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20141216044516) do
     t.boolean  "shadow",                             default: false
     t.boolean  "bottom_padding",                     default: true
     t.string   "slug"
-    t.boolean  "published"
+    t.boolean  "published",                          default: false
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true

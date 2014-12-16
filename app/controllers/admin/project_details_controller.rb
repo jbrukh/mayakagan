@@ -1,6 +1,11 @@
 class Admin::ProjectDetailsController < ApplicationController
 
-  before_action :set_project_detail
+  before_action :set_project_detail, except: [:index]
+
+  def index
+    @project = Project.friendly.find(params[:project_id])
+    @project_details = @project.project_details
+  end
 
   def destroy
     @project_detail.destroy

@@ -24,8 +24,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     put 'projects/:id/move', to: 'projects#move', as: :move_project
-    resources :projects, :except => [:show]
-    resources :project_details, :only => [:index, :show, :destroy, :update]
+    resources :projects, :except => [:show] do
+      resources :project_details, :only => [:destroy, :update]
+    end
   end
 
 end

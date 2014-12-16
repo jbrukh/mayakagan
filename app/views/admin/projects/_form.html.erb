@@ -58,9 +58,11 @@
 				</div>
 			</div>
 
+			<% if !@project.new_record? %>
 			<div class="input-group" id="details">
 				<%= f.label :details %>
 
+				
 				<div class="row">
 					<div class="col-lg-12">
 						<section>
@@ -68,6 +70,7 @@
 						</section>
 					</div>
 				</div>
+			
 
 				<section>
 					<span>Bottom padding?</span>&nbsp;<%= f.check_box :bottom_padding %>
@@ -83,14 +86,15 @@
 							</div>
 						</div>
 						<div class="col-sm-5">
-							<%= link_to "Delete", admin_project_detail_path(detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-							<%= link_to "Up", admin_project_detail_path(detail, move: 'up'), method: 'put', class: 'btn btn-default' %>
-							<%= link_to "Down", admin_project_detail_path(detail, move: 'down'), method: 'put', class: 'btn btn-default' %>
+							<%= link_to "Delete", admin_project_project_detail_path(@project, detail), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+							<%= link_to "Up", admin_project_project_detail_path(@project, id: detail.id, move: 'up'), method: 'put', class: 'btn btn-default' %>
+							<%= link_to "Down", admin_project_project_detail_path(@project, id: detail.id, move: 'down'), method: 'put', class: 'btn btn-default' %>
 						</div>
 					</div>
 					<% end %>
 				</section>
 			</div>
+				<% end %>
 		</div>
 		<% end %>
 	</div>

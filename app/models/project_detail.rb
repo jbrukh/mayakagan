@@ -2,6 +2,9 @@ class ProjectDetail < ActiveRecord::Base
 
   belongs_to :project
   acts_as_list scope: :project
+ 
+  has_many :images, -> { order("position ASC") }, :dependent => :destroy
+  accepts_nested_attributes_for :images
 
   # Image
 

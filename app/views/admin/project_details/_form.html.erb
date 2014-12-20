@@ -1,6 +1,6 @@
 <div class="container-fluid project-form">
   <div class="row">
-  <%= form_for [:admin, @project_detail] do |f| %>
+    <%= form_for [:admin, @project_detail] do |f| %>
 
     <div class="col-md-3 col-lg-2">
       <section>
@@ -10,6 +10,14 @@
 
     </div>
     <div class="col-md-9 col-lg-10">
+      <section>
+        <h4>Flipbook Images</h4>
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </section>
+      <%= f.fields_for :images do |d| %>
+      <section>
+      </section>
+      <% end %>
     </div>
     <% end %>
   </div>

@@ -113,22 +113,55 @@
 		$padding-medium: 5em;
 		$padding-small: 3em;
 
-		@mixin padding {
+		@mixin padding-top($factor) {
 			@media(min-width: 0) {
-				padding-top: $padding-small;
+				padding-top: $padding-small*$factor;
 			}
 			@media(min-width: $screen-sm) {
-				padding-top: $padding-medium;
+				padding-top: $padding-medium*$factor;
 			}
 			@media(min-width: $screen-md) {
-				padding-top: $padding-large;
+				padding-top: $padding-large*$factor;
+			}
+		}
+
+		@mixin padding-bottom($factor) {
+			@media(min-width: 0) {
+				padding-bottom: $padding-small*$factor;
+			}
+			@media(min-width: $screen-sm) {
+				padding-bottom: $padding-medium*$factor;
+			}
+			@media(min-width: $screen-md) {
+				padding-bottom: $padding-large*$factor;
+			}
+		}
+
+		@mixin padding-both {
+			@media(min-width: 0) {
+				padding: $padding-small/2 0;
+			}
+			@media(min-width: $screen-sm) {
+				padding: $padding-medium/2 0;
+			}
+			@media(min-width: $screen-md) {
+				padding: $padding-large/2 0;
 			}
 		}
 
 		.detail {
 			text-align: center;
-			&:not(:first-child) {
-				@include padding;
+
+			&:not(:first-child):not(:last-child) {
+				@include padding-both;
+			}
+
+			&:first-child {
+				@include padding-bottom(.5);
+			}
+
+			&:last-child {
+				@include padding-top(.5);
 			}
 			
 			.detail-img {
@@ -166,7 +199,7 @@
 			}
 		}
 		.bottom-padding {
-			@include padding;
+			@include padding-top(1);
 		}
 	}
 }

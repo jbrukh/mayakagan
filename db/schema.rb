@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141225204115) do
+ActiveRecord::Schema.define(version: 20141225205055) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20141225204115) do
     t.boolean  "bottom_padding",                     default: true
     t.string   "slug"
     t.boolean  "published",                          default: false
+    t.boolean  "centered",                           default: false
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     resources :projects, :except => [:show] do
       resources :project_details, :only => [:create, :destroy, :update]
     end
-    resources :project_details, :only => [:edit, :update]
+    resources :project_details, :only => [:edit, :update] do
+      resources :images, :only => [:destroy, :update]
+    end
   end
 
 end

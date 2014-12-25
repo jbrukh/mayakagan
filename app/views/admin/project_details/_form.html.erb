@@ -24,19 +24,26 @@
           <%= file_field_tag "images[]", type: :file, multiple: true %>
         </section>
 
-        <%= f.fields_for :images do |d| %>
-        <% img = d.object %>
-        <section>
-          <%= link_to image_tag(img.image.url(:thumb), class: 'thumbnail'), img.image.url %>
-        </section>
-        <% end %>
+        <div class"row">
+          <%= f.fields_for :images do |d| %>
+          <% img = d.object %>
+          <div class="col-sm-7">
+            <%= link_to image_tag(img.image.url(:thumb), class: 'thumbnail'), img.image.url %>
+          </div>
+          <div class="col-sm-5">
+            <%= link_to "Delete", admin_project_detail_image_path(@project_detail, img), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+            <%= link_to "Up", admin_project_detail_image_path(@project_detail, id: img.id, move: 'up'), method: 'put', class: 'btn btn-default' %>
+            <%= link_to "Down", admin_project_detail_image_path(@project_detail, id: img.id, move: 'down'), method: 'put', class: 'btn btn-default' %>
+          </div>
+          <% end %>
+        </div>
 
 
       </div>
 
       <div class="col-xs-12">
         <div>
-        <%= render 'partials/flipbook', images: @project_detail.images, project_id: @project_detail.project_id, detail_id: @project_detail.id %>
+          <%= render 'partials/flipbook', images: @project_detail.images, project_id: @project_detail.project_id, detail_id: @project_detail.id %>
         </div>
       </div>
 

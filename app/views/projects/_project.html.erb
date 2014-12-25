@@ -37,18 +37,18 @@
           <%= image_tag detail.image.url, class: 'detail-img' %>
         </div>
         <% if detail.description.present? %>
-          <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-            <div class="description">
-              <%= detail.description %>
-              </div>
+        <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+          <div class="description">
+            <%= detail.description %>
           </div>
+        </div>
         <% end %>
       </div>
     </div>
     <% elsif detail.detail_type == "flipbook" %>
-      <div class="detail">
-        <%= render 'partials/flipbook', images: detail.images, project_id: project.id, detail_id: detail.id %>
-      </div>
+    <div class="detail">
+      <%= render 'partials/flipbook', images: detail.images, project_id: project.id, detail_id: detail.id %>
+    </div>
     <% end %>
 
     <% end %>
@@ -65,11 +65,11 @@
   $(document).keydown(function(e) {
     switch(e.which) {
         case 37: // left
-          window.location = '<%= project_path(prev_project) %>';
+        window.location = '<%= project_path(prev_project) %>';
         break;
 
         case 39: // right
-          window.location = '<%= project_path(next_project) %>';
+        window.location = '<%= project_path(next_project) %>';
         break;
 
         default: return; // exit this handler for other keys

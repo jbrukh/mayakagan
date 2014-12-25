@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220235758) do
+ActiveRecord::Schema.define(version: 20141225204115) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20141220235758) do
     t.datetime "image_updated_at"
     t.integer  "position"
     t.string   "detail_type",                    default: "image"
+    t.boolean  "centered",                       default: false
   end
 
   create_table "projects", force: true do |t|

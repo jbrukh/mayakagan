@@ -94,7 +94,7 @@
 				}
 				line-height: 1.6em;
 				font-weight: 300;
-			
+
 				&.justified {
 					text-align: justify;
 				}
@@ -103,6 +103,7 @@
 					text-align: center;
 				}
 			}
+
 		}
 	}
 
@@ -145,6 +146,14 @@
 				text-align: justify;
 				line-height: 1.6em;
 				font-weight: 300;
+
+				&.justified {
+					text-align: justify;
+				}
+
+				&.centered {
+					text-align: center;
+				}
 			}
 		}
 		.bottom-padding {

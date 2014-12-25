@@ -76,7 +76,7 @@ class Admin::ProjectsController < ApplicationController
       :shadow, 
       :bottom_padding,
       :published, 
-      :project_details_attributes => [:description, :id], 
+      :project_details_attributes => [:description, :id, :centered], 
       :images => []
     )
   end

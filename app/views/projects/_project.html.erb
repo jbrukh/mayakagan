@@ -24,7 +24,7 @@
   <div class="row project-text">
     <div class="box col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
       <h1 class="title"><%= project.title %></h1>
-      <div class="description"><%= project.description %></div>
+      <div class="description <%= if project.centered then 'centered' else 'justified' end %>"><%= project.description %></div>
     </div>
   </div>
   <div class="details">
@@ -38,7 +38,7 @@
         </div>
         <% if detail.description.present? %>
         <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-          <div class="description">
+          <div class="description <%= if detail.centered then 'centered' else 'justified' end %>">
             <%= detail.description %>
           </div>
         </div>

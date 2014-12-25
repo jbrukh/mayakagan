@@ -46,7 +46,7 @@
       </div>
     </div>
     <% elsif detail.detail_type == "flipbook" %>
-    <div class="detail">
+    <div class="detail flipbook">
       <%= render 'partials/flipbook', images: detail.images, project_id: project.id, detail_id: detail.id %>
     </div>
     <% end %>

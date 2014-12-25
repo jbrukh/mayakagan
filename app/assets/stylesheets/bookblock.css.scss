@@ -10,9 +10,12 @@
 
 .bb-bookblock {
 
+  $ratio: 500/800;
+
   @media(min-width: 0) {
-    width: 358px;
-    height: 224px;
+    $w: 300px;
+    width: $w;
+    height: $ratio*$w;
   }
   @media(min-width: $screen-sm) {
     width: 600px;

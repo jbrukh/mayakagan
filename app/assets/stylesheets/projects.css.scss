@@ -92,9 +92,16 @@
 				@media(min-width: $screen-sm) {
 					font-size: 1.1em;
 				}
-				text-align: justify;
 				line-height: 1.6em;
 				font-weight: 300;
+			
+				&.justified {
+					text-align: justify;
+				}
+
+				&.centered {
+					text-align: center;
+				}
 			}
 		}
 	}

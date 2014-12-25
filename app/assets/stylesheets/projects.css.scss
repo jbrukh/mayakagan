@@ -152,16 +152,20 @@
 		.detail {
 			text-align: center;
 
-			&:not(:first-child):not(:last-child) {
+			&.regular:not(:first-child):not(:last-child) {
 				@include padding-both;
 			}
 
-			&:first-child {
+			&.regular:first-child {
 				@include padding-bottom(.5);
 			}
 
-			&:last-child {
+			&.regular:last-child {
 				@include padding-top(.5);
+			}
+
+			&.no-padding {
+				padding: 0;
 			}
 			
 			.detail-img {

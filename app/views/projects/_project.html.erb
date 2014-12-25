@@ -31,24 +31,24 @@
     <% project.project_details.each do |detail| %>
 
     <% if detail.detail_type == "image" %>
-    <div class="detail">
+    <div class="detail <%= if detail.detail_padding then 'regular' else 'no-padding' end %>">
       <div class="row">
         <div class="col-xs-12">
           <%= image_tag detail.image.url, class: 'detail-img' %>
         </div>
       </div>
     </div>
-      <% if detail.description.present? %>
-      <div class="detail-description">
-        <div class="row">
+    <% if detail.description.present? %>
+    <div class="detail-description">
+      <div class="row">
         <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
           <div class="description <%= if detail.centered then 'centered' else 'justified' end %>">
             <%= detail.description %>
           </div>
         </div>
       </div>
-      </div>
-      <% end %>
+    </div>
+    <% end %>
     <% elsif detail.detail_type == "flipbook" %>
     <div class="detail flipbook hidden-xs hidden-sm">
       <%= render 'partials/flipbook', images: detail.images, project_id: project.id, detail_id: detail.id %>

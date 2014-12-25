@@ -1,24 +1,50 @@
 <div class="container-fluid project-form">
-  <div class="row">
-    <%= form_for [:admin, @project_detail] do |f| %>
+ <%= form_for [:admin, @project_detail], :html => { :multipart => true }  do |f| %>
+ <div class="row">
 
-    <div class="col-md-3 col-lg-2">
-      <section>
-        <h4>Controls</h4>
-        <%= f.submit method: 'put', class: 'btn btn-default', value: 'Save' %>
-      </section>
 
-    </div>
-    <div class="col-md-9 col-lg-10">
-      <section>
-        <h4>Flipbook Images</h4>
-        <%= file_field_tag "images[]", type: :file, multiple: true %>
-      </section>
-      <%= f.fields_for :images do |d| %>
-      <section>
-      </section>
-      <% end %>
-    </div>
-    <% end %>
+  <div class="col-md-3 col-lg-2">
+    <section>
+      <h4>Controls</h4>
+      <%= f.submit method: 'put', class: 'btn btn-default', value: 'Save' %>
+      <%= link_to 'Back', edit_admin_project_path(@project_detail.project.id) + "#details" %>
+    </section>
+
   </div>
+  <div class="col-md-9 col-lg-10">
+
+    <div class="row">
+
+
+      <div class="col-xs-12">
+
+
+        <section>
+          <h4>Flipbook Images</h4>
+          <%= file_field_tag "images[]", type: :file, multiple: true %>
+        </section>
+
+        <%= f.fields_for :images do |d| %>
+        <% img = d.object %>
+        <section>
+          <%= link_to image_tag(img.image.url(:thumb), class: 'thumbnail'), img.image.url %>
+        </section>
+        <% end %>
+
+
+      </div>
+
+      <div class="col-xs-12">
+        <div>
+        <%= render 'partials/flipbook', images: @project_detail.images, project_id: @project_detail.project_id, detail_id: @project_detail.id %>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<% end %>
 </div>

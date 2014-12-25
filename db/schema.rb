@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220235637) do
+ActiveRecord::Schema.define(version: 20141220235758) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141220235637) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "project_detail_id"
+    t.integer  "position"
   end
 
   add_index "images", ["project_detail_id"], name: "index_images_on_project_detail_id"

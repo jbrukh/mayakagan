@@ -85,10 +85,12 @@
 						<div class="col-sm-7">
 							<div class="project-detail">
 							<% if detail.detail_type == 'image' %>
+								<h1>Image</h1>
 								<%= link_to image_tag(detail.image.url(:thumb), class: 'thumbnail'), detail.image.url %>
 								<%= d.text_area :description, class: 'form-control', rows: 5, cols: 20  %>
 							<% elsif detail.detail_type == 'flipbook' %>
 								<h1>Flipbook</h1>
+								This flipbook has <%= detail.images.count %> images.
 								<%= link_to "Edit this flipbook", edit_admin_project_detail_path(detail) %>
 							<% end %>
 							</div>

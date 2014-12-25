@@ -1,0 +1,22 @@
+@import 'bootstrap';
+
+.bookblock-img {
+  width: 100%;
+}
+
+.bb-bookblock {
+
+  @media(min-width: 0) {
+    width: 358px;
+    height: 224px;
+  }
+  @media(min-width: $screen-sm) {
+    width: 600px;
+    height: 375px;
+  }
+  @media(min-width: $screen-md) {
+    width: 800px;
+    height: 500px;
+  }
+}
+

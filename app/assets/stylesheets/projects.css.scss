@@ -121,7 +121,8 @@
 			&:not(:first-child) {
 				@include padding;
 			}
-			img {
+			
+			.detail-img {
 				max-width: 90%;
 			}
 

@@ -26,7 +26,16 @@ class Admin::ProjectDetailsController < ApplicationController
     elsif params[:move] == 'down'
       @project_detail.move_lower
     end
-    redirect_to edit_admin_project_path(id: @project_detail.project_id) + '#details'
+
+    if params[:images]
+      params[:images].each do |image|
+        @project_detail.images.create!(image: image)
+      end
+      redirect_to edit_admin_project_detail_path(@project_detail)
+      return
+    end
+
+    redirect_to edit_admin_project_path(id: @project_detail.project_id)
   end
 
   private
@@ -36,7 +45,7 @@ class Admin::ProjectDetailsController < ApplicationController
   end
 
   def permitted_params
-    params.permit(:move, :images => [])
+    params.permit(:move, :image_attributes => [:image], :images => [])
   end
 
 end

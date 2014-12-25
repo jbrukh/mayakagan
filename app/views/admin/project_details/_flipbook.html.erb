@@ -1,0 +1,37 @@
+<% if images.size > 0 %>
+<div id="bb-bookblock" class="bb-bookblock">
+  <% images.each do |img| %>
+  <div class="bb-item">
+    <%= image_tag(img.image.url, class: 'my-img') %>
+  </div>
+  <% end %>
+</div>
+<script>
+  $(function() {
+    var bb = $( '#bb-bookblock' );
+
+    bb.bookblock({
+      shadowSides: 0.3,
+      shadowFlip: 0.3,
+      circular: true
+    });
+
+    bb.click(function(){
+      bb.bookblock('next');
+    });
+
+
+  });
+</script>
+<style>
+  .my-img {
+    width: 100%;
+  }
+
+  .bb-bookblock {
+    width: 800px;
+    height: 500px;
+  }
+
+</style>
+<% end %>

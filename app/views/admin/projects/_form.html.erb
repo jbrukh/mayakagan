@@ -89,7 +89,9 @@
 								<h1>Image</h1>
 								<%= link_to image_tag(detail.image.url(:thumb), class: 'thumbnail'), detail.image.url %>
 								<%= d.text_area :description, class: 'form-control', rows: 5, cols: 20  %>
-								<span>Centered?</span>&nbsp;<%= d.check_box :centered %>
+								<span>Centered?</span>&nbsp;<%= d.check_box :centered %>&nbsp;
+								<span>Padding?</span>&nbsp;<%= d.check_box :detail_padding %>
+
 							<% elsif detail.detail_type == 'flipbook' %>
 								<h1>Flipbook</h1>
 								This flipbook has <%= detail.images.count %> images.

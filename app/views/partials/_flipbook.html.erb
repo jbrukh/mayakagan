@@ -1,10 +1,10 @@
 <% if images.size > 0 %>
 <div id="bb-bookblock-<%= project_id %>-<%=detail_id%>" class="bb-bookblock">
   <% images.each do |img| %>
-  <div class="bb-item">
-    <%= image_tag(img.image.url, class: 'bookblock-img') %>
-  </div>
-  <% end %>
+    <div class="bb-item">
+      <%= image_tag(img.image.url, class: 'bookblock-img') %>
+    </div>
+    <% end %>
 </div>
 <script>
   $(function() {

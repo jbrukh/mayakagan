@@ -6,12 +6,12 @@
 
 .bb-item {
   overflow: hidden;
-  box-shadow:  0px 4px 10px 0 rgba(160, 160, 160, 0.93)
 }
 
 .bb-bookblock {
 
   $ratio: 500/800;
+  box-shadow:  0px 4px 10px 0 rgba(160, 160, 160, 0.93);
 
   @media(min-width: 0) {
     $w: 300px;
@@ -26,5 +26,6 @@
     width: 800px;
     height: 500px;
   }
+
 }
 
